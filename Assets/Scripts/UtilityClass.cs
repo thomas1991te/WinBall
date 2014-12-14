@@ -7,7 +7,6 @@ public class UtilityClass {
 	// the first object is the moving object the second one the fixed one
 	public static float calculateAngleOfContact(GameObject object1, GameObject object2) {
 		float angleOfContact = Vector3.Angle(object1.rigidbody.velocity, object2.transform.position);
-		Debug.Log("AngleOfContact: " + angleOfContact);
 		return angleOfContact;
 	}
 }
