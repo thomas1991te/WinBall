@@ -878,7 +878,7 @@ Transform:
   m_PrefabParentObject: {fileID: 401026, guid: 9bde9f359cb41ac47bfdf33d1a1176e8, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 44577947}
-  m_LocalRotation: {x: -.609263837, y: -.358883828, z: -.358883828, w: .609263778}
+  m_LocalRotation: {x: -.609263897, y: -.358883858, z: -.358883858, w: .609263837}
   m_LocalPosition: {x: -9, y: 29.0000286, z: 663.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1793,7 +1793,7 @@ GameObject:
   - 4: {fileID: 87542199}
   - 33: {fileID: 87542201}
   - 23: {fileID: 87542200}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: l_giftelvis1_eo_do
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1976,6 +1976,8 @@ Transform:
   - {fileID: 1147845998}
   - {fileID: 298670381}
   - {fileID: 1524988305}
+  - {fileID: 1863260746}
+  - {fileID: 767409638}
   m_Father: {fileID: 99767857}
   m_RootOrder: 0
 --- !u!1 &99003144
@@ -11094,7 +11096,7 @@ GameObject:
   - 4: {fileID: 543588007}
   - 33: {fileID: 543588009}
   - 23: {fileID: 543588008}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: l_giftelvis3_eo_do
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11108,7 +11110,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 543588006}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.69624501e-06, y: -1.27304265e-05, z: 5.00013733}
+  m_LocalPosition: {x: -0, y: .400000006, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1006083586}
@@ -16039,6 +16041,69 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 765460743}
   m_Mesh: {fileID: 4300668, guid: 9bde9f359cb41ac47bfdf33d1a1176e8, type: 3}
+--- !u!1 &767409637
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 767409638}
+  - 108: {fileID: 767409639}
+  m_Layer: 8
+  m_Name: SpotlightGreenLED
+  m_TagString: Spotlight
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &767409638
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 767409637}
+  m_LocalRotation: {x: .030535832, y: .800829947, z: -.383932889, w: .458622396}
+  m_LocalPosition: {x: -81, y: -1.30999994, z: 123.32}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 90270161}
+  m_RootOrder: 17
+--- !u!108 &767409639
+Light:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 767409637}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Type: 0
+  m_Color: {r: 0, g: 1, b: .172413826, a: 1}
+  m_Intensity: 8
+  m_Range: 10
+  m_SpotAngle: 26
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_Strength: 1
+    m_Bias: .0500000007
+    m_Softness: 4
+    m_SoftnessFade: 1
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_ActuallyLightmapped: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 256
+  m_Lightmapping: 1
+  m_ShadowSamples: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+  m_IndirectIntensity: 1
+  m_AreaSize: {x: 1, y: 1}
 --- !u!1 &771152508
 GameObject:
   m_ObjectHideFlags: 0
@@ -16707,7 +16772,7 @@ GameObject:
   - 4: {fileID: 800136574}
   - 33: {fileID: 800136576}
   - 23: {fileID: 800136575}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: l_giftelvis2_eo_do
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18842,7 +18907,7 @@ GameObject:
   - 4: {fileID: 902544748}
   - 33: {fileID: 902544750}
   - 23: {fileID: 902544749}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: l_giftelvis5_eo_do
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36522,7 +36587,7 @@ Transform:
   m_PrefabParentObject: {fileID: 401344, guid: 9bde9f359cb41ac47bfdf33d1a1176e8, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1817548065}
-  m_LocalRotation: {x: -.609263837, y: -.358883798, z: -.358883768, w: .609263837}
+  m_LocalRotation: {x: -.609263897, y: -.358883828, z: -.358883798, w: .609263897}
   m_LocalPosition: {x: -471.25, y: 2.0642703e-05, z: 472.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -37428,6 +37493,69 @@ Transform:
   - {fileID: 1230970007}
   m_Father: {fileID: 1510240508}
   m_RootOrder: 334
+--- !u!1 &1863260745
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1863260746}
+  - 108: {fileID: 1863260747}
+  m_Layer: 8
+  m_Name: SpotlightRedLED
+  m_TagString: Spotlight
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1863260746
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1863260745}
+  m_LocalRotation: {x: .0305354726, y: .800830007, z: -.383932739, w: .458622545}
+  m_LocalPosition: {x: -79.0999985, y: 1.04999995, z: 122.720001}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 90270161}
+  m_RootOrder: 16
+--- !u!108 &1863260747
+Light:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1863260745}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Type: 0
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Intensity: 8
+  m_Range: 10
+  m_SpotAngle: 26
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_Strength: 1
+    m_Bias: .0500000007
+    m_Softness: 4
+    m_SoftnessFade: 1
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_ActuallyLightmapped: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 256
+  m_Lightmapping: 1
+  m_ShadowSamples: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+  m_IndirectIntensity: 1
+  m_AreaSize: {x: 1, y: 1}
 --- !u!1 &1864496867
 GameObject:
   m_ObjectHideFlags: 0
@@ -41273,7 +41401,7 @@ GameObject:
   - 4: {fileID: 2058254550}
   - 33: {fileID: 2058254552}
   - 23: {fileID: 2058254551}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: l_giftelvis4_eo_do
   m_TagString: Untagged
   m_Icon: {fileID: 0}
