@@ -8,8 +8,8 @@ TagManager:
   - Ball
   - Bumper
   - Spotlight
-  - 
-  - 
+  - BallOutTrigger
+  - GameEndTrigger
   - 
   - 
   - 

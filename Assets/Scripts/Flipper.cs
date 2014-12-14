@@ -72,12 +72,12 @@ public class Flipper : MonoBehaviour {
 
 	void OnCollisionEnter(Collision theCollision) {
 		if(theCollision.gameObject.tag == "Ball") {
-			// calculate angel between the two colliding objects
-			float angle = UtilityClass.calculateAngle(theCollision.gameObject, this.gameObject);
+			// calculate the angel of contact between the two colliding objects
+			float angleOfContact = UtilityClass.calculateAngleOfContact(theCollision.gameObject, this.gameObject);
 			// get current velocity of the ball
 			Vector3 velocityBall = theCollision.gameObject.rigidbody.velocity;
 			// update force according to ball velocity, hit angle and current speed of flipper
-			theCollision.gameObject.rigidbody.AddForce(velocityBall.x * angle * currentRotationSpeed, velocityBall.y, -accelerationSpeed * currentRotationSpeed, ForceMode.Acceleration);
+			theCollision.gameObject.rigidbody.AddForce(velocityBall.x * angleOfContact * currentRotationSpeed, velocityBall.y, -accelerationSpeed * currentRotationSpeed, ForceMode.Acceleration);
 		}
 	}
 }

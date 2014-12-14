@@ -9,19 +9,13 @@ public class Bumper : MonoBehaviour {
 	// The minimal speed the ball bounces off a bumper
 	public float bouncingSpeedMin;
 
-	// The spotlight of this bumper.
-	public Light spotlight;
-
-	// The maximum intensity of the spotlight (0 - 8)
-	public float spotlightIntensity;
-
-	// Duration of the spotlight to light
-	public float spotlightDuration;
+	// All spotlights assigned to this bumper.
+	public Spotlight[] spotlights;
 
 	// Use this for initialization
 	void Start () {
-		if (spotlight != null) {
-			spotlight.intensity = 0f;
+		foreach (Spotlight spotlight in spotlights) {
+			spotlight.initialize();
 		}
 	}
 	
@@ -32,24 +26,48 @@ public class Bumper : MonoBehaviour {
 
 	void OnCollisionEnter(Collision theCollision) {
 		if(theCollision.gameObject.tag == "Ball") {
-			// calculate angel between the two colliding objects
-			float angle = UtilityClass.calculateAngle(theCollision.gameObject, this.gameObject);
+			// calculate the angle of contact between the two colliding objects
+			float angleOfContact = UtilityClass.calculateAngleOfContact(theCollision.gameObject, this.gameObject);
 			// get current velocity of the ball
-			Vector3 velocityBall = theCollision.gameObject.rigidbody.velocity;
+			Vector3 velocityBall = Vector3.Normalize(theCollision.gameObject.rigidbody.velocity);
 			// calculate random bouncing speed
 			float bouncingSpeed = Random.Range(bouncingSpeedMin, bouncingSpeedMax);
 			// update force according to ball velocity, hit angle and current speed of flipper
-			theCollision.gameObject.rigidbody.AddForce(velocityBall.x * angle * bouncingSpeed, velocityBall.y, -bouncingSpeed * angle * velocityBall.z, ForceMode.Acceleration);
-			if (spotlight != null) {
-				StartCoroutine(LightSpotlight());
+			theCollision.gameObject.rigidbody.AddForce(velocityBall.x * bouncingSpeed, velocityBall.y, -bouncingSpeed * velocityBall.z, ForceMode.Acceleration);
+
+			foreach (Spotlight spotlight in spotlights) {
+				StartCoroutine(spotlight.LightSpotlight());
 			}
 		}
 	}
 
-	// light spotlight for spotlight duration seconds
-	IEnumerator LightSpotlight() {
-		this.spotlight.intensity = spotlightIntensity;
-		yield return new WaitForSeconds(spotlightDuration);
-		this.spotlight.intensity = 0f;
+	[System.Serializable]
+	public class Spotlight {
+		// The spotlight
+		public Light spotlight;
+
+		// The intensity of this spotlight when lit
+		public float intensity;
+
+		// How long the spotlight should be lit
+		public float duration;
+
+		// public constructor
+		public Spotlight() {
+
+		}
+
+		// Initializes the spotlight's intensity to zero
+		public void initialize() {
+			this.spotlight.intensity = 0f;
+		}
+
+		// light spotlight for spotlight duration seconds
+		public IEnumerator LightSpotlight() {
+			this.spotlight.intensity = intensity;
+			yield return new WaitForSeconds(duration);
+			this.spotlight.intensity = 0f;
+		}
+
 	}
 }
