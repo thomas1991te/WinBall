@@ -878,7 +878,7 @@ Transform:
   m_PrefabParentObject: {fileID: 401026, guid: 9bde9f359cb41ac47bfdf33d1a1176e8, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 44577947}
-  m_LocalRotation: {x: -.609263837, y: -.358883828, z: -.358883828, w: .609263778}
+  m_LocalRotation: {x: -.609263897, y: -.358883858, z: -.358883858, w: .609263837}
   m_LocalPosition: {x: -9, y: 29.0000286, z: 663.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -4465,6 +4465,7 @@ GameObject:
   - 4: {fileID: 235466585}
   - 33: {fileID: 235466587}
   - 23: {fileID: 235466586}
+  - 64: {fileID: 235466588}
   m_Layer: 0
   m_Name: wireramp1_3_0_co
   m_TagString: Untagged
@@ -4512,6 +4513,19 @@ MeshFilter:
     type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 235466584}
+  m_Mesh: {fileID: 4300154, guid: 9bde9f359cb41ac47bfdf33d1a1176e8, type: 3}
+--- !u!64 &235466588
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 235466584}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
   m_Mesh: {fileID: 4300154, guid: 9bde9f359cb41ac47bfdf33d1a1176e8, type: 3}
 --- !u!1 &236085359
 GameObject:
@@ -6489,7 +6503,7 @@ Renderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 332140002}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
@@ -6511,7 +6525,7 @@ SphereCollider:
   m_GameObject: {fileID: 332140002}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: .5
   m_Center: {x: 0, y: 0, z: 0}
@@ -10156,6 +10170,7 @@ GameObject:
   - 4: {fileID: 491380773}
   - 33: {fileID: 491380775}
   - 23: {fileID: 491380774}
+  - 64: {fileID: 491380776}
   m_Layer: 0
   m_Name: wireramp2_2_0_co
   m_TagString: Untagged
@@ -10203,6 +10218,19 @@ MeshFilter:
     type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 491380772}
+  m_Mesh: {fileID: 4300150, guid: 9bde9f359cb41ac47bfdf33d1a1176e8, type: 3}
+--- !u!64 &491380776
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 491380772}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
   m_Mesh: {fileID: 4300150, guid: 9bde9f359cb41ac47bfdf33d1a1176e8, type: 3}
 --- !u!1 &495542373
 GameObject:
@@ -21956,6 +21984,7 @@ GameObject:
   - 4: {fileID: 1035907624}
   - 33: {fileID: 1035907626}
   - 23: {fileID: 1035907625}
+  - 64: {fileID: 1035907627}
   m_Layer: 0
   m_Name: wireramp2_3_0_co
   m_TagString: Untagged
@@ -22003,6 +22032,19 @@ MeshFilter:
     type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1035907623}
+  m_Mesh: {fileID: 4300148, guid: 9bde9f359cb41ac47bfdf33d1a1176e8, type: 3}
+--- !u!64 &1035907627
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1035907623}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
   m_Mesh: {fileID: 4300148, guid: 9bde9f359cb41ac47bfdf33d1a1176e8, type: 3}
 --- !u!1 &1041021117
 GameObject:
@@ -33691,6 +33733,7 @@ GameObject:
   - 33: {fileID: 1585546003}
   - 23: {fileID: 1585546002}
   - 64: {fileID: 1585546004}
+  - 114: {fileID: 1585546005}
   m_Layer: 0
   m_Name: wireramp1_co
   m_TagString: Untagged
@@ -33754,6 +33797,18 @@ MeshCollider:
   m_SmoothSphereCollisions: 0
   m_Convex: 0
   m_Mesh: {fileID: 4300152, guid: 9bde9f359cb41ac47bfdf33d1a1176e8, type: 3}
+--- !u!114 &1585546005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1585546000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23830567b5ab84b8b838ecbc3bb975f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  accelerationFactor: 1000
 --- !u!1 &1587930324
 GameObject:
   m_ObjectHideFlags: 0
@@ -37681,7 +37736,7 @@ Transform:
   m_PrefabParentObject: {fileID: 401344, guid: 9bde9f359cb41ac47bfdf33d1a1176e8, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1817548065}
-  m_LocalRotation: {x: -.609263837, y: -.358883798, z: -.358883768, w: .609263837}
+  m_LocalRotation: {x: -.609263897, y: -.358883828, z: -.358883798, w: .609263897}
   m_LocalPosition: {x: -471.25, y: 2.0642703e-05, z: 472.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -39037,6 +39092,7 @@ GameObject:
   - 4: {fileID: 1872080034}
   - 33: {fileID: 1872080036}
   - 23: {fileID: 1872080035}
+  - 64: {fileID: 1872080037}
   m_Layer: 0
   m_Name: wireramp1_2_0_co
   m_TagString: Untagged
@@ -39084,6 +39140,19 @@ MeshFilter:
     type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1872080033}
+  m_Mesh: {fileID: 4300156, guid: 9bde9f359cb41ac47bfdf33d1a1176e8, type: 3}
+--- !u!64 &1872080037
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1872080033}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
   m_Mesh: {fileID: 4300156, guid: 9bde9f359cb41ac47bfdf33d1a1176e8, type: 3}
 --- !u!1 &1877087348
 GameObject:
@@ -41751,6 +41820,7 @@ GameObject:
   - 33: {fileID: 2004659423}
   - 23: {fileID: 2004659422}
   - 64: {fileID: 2004659424}
+  - 114: {fileID: 2004659425}
   m_Layer: 0
   m_Name: wireramp2_co
   m_TagString: Untagged
@@ -41814,6 +41884,18 @@ MeshCollider:
   m_SmoothSphereCollisions: 0
   m_Convex: 0
   m_Mesh: {fileID: 4300146, guid: 9bde9f359cb41ac47bfdf33d1a1176e8, type: 3}
+--- !u!114 &2004659425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2004659420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23830567b5ab84b8b838ecbc3bb975f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  accelerationFactor: 1000
 --- !u!1 &2005758334
 GameObject:
   m_ObjectHideFlags: 0
@@ -43167,7 +43249,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2081643198}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -49.0999985, y: .519999981, z: 92.5899963}
+  m_LocalPosition: {x: -48.7700005, y: .0599999987, z: 92.5899963}
   m_LocalScale: {x: 2.4000001, y: 2.4000001, z: 2.4000001}
   m_Children: []
   m_Father: {fileID: 0}
