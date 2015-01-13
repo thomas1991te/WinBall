@@ -27,6 +27,9 @@
 	private int score = 0;
 
 	// returns and updates the score
+	// the current number of lives
+	private int lives = 3;
+
 	public int Score {
 		get {
 			return score;
@@ -35,9 +38,6 @@
 			score = value;
 		}
 	}
-
-	// the current number of lives
-	private int lives = 3;
 
 	// returns and updates the live
 	public int Lives {

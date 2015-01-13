@@ -12,6 +12,8 @@ public class Bumper : MonoBehaviour {
 	// All spotlights assigned to this bumper.
 	public Spotlight[] spotlights;
 
+	public int points;
+
 	// Use this for initialization
 	void Start () {
 		foreach (Spotlight spotlight in spotlights) {
@@ -38,6 +40,8 @@ public class Bumper : MonoBehaviour {
 			foreach (Spotlight spotlight in spotlights) {
 				StartCoroutine(spotlight.LightSpotlight());
 			}
+			GameData.Instance.Score+=points;
+
 		}
 	}
 

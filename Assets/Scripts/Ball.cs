@@ -33,6 +33,7 @@ public class Ball : MonoBehaviour {
 				// game over
 				GameData.Instance.CurrentGameMode = GameData.GameMode.GameOver;
 				GameObject.Destroy(this.gameObject);
+				Application.LoadLevel(3);
 			}
 		} else if (other.tag == "BallOutTrigger") {
 			if (GameData.Instance.CurrentGameMode == GameData.GameMode.Start) {

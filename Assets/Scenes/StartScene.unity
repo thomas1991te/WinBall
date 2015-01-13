@@ -9343,6 +9343,7 @@ MonoBehaviour:
   - spotlight: {fileID: 658540364}
     intensity: 8
     duration: .5
+  points: 0
 --- !u!23 &426263332
 Renderer:
   m_ObjectHideFlags: 0
@@ -11719,6 +11720,7 @@ GameObject:
   - 92: {fileID: 529368089}
   - 124: {fileID: 529368088}
   - 81: {fileID: 529368087}
+  - 114: {fileID: 529368092}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -11791,6 +11793,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
+--- !u!114 &529368092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 529368086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50d97c9467092440a9fde43541b163b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &530048535
 GameObject:
   m_ObjectHideFlags: 0
@@ -31240,6 +31253,7 @@ MonoBehaviour:
   - spotlight: {fileID: 400494907}
     intensity: 8
     duration: .5
+  points: 0
 --- !u!114 &1430041345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32346,6 +32360,7 @@ MonoBehaviour:
   - spotlight: {fileID: 1864302626}
     intensity: 8
     duration: .5
+  points: 0
 --- !u!82 &1475876346
 AudioSource:
   m_ObjectHideFlags: 0
@@ -36428,6 +36443,7 @@ MonoBehaviour:
   - spotlight: {fileID: 1082432645}
     intensity: 8
     duration: .5
+  points: 0
 --- !u!82 &1618260933
 AudioSource:
   m_ObjectHideFlags: 0
@@ -39966,6 +39982,7 @@ MonoBehaviour:
   - spotlight: {fileID: 803722808}
     intensity: 8
     duration: .5
+  points: 0
 --- !u!82 &1805749048
 AudioSource:
   m_ObjectHideFlags: 0
