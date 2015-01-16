@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CompressionSpring : MonoBehaviour {
+public class Plunger : MonoBehaviour {
 
 	// The maximum compression of the spring.
 	public float maxCompression;
@@ -33,7 +33,11 @@ public class CompressionSpring : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKey("space")) {
+		Controller controller = ActiveController.getActiveController();
+
+		float compressionOld = compression;
+
+		if (Input.GetKey("space") || (controller.isConnected() && controller.getButton(Controller.button01))) {
 			if (compression < maxCompression) {
 				compression += compressionSpeed * Time.deltaTime;
 				transform.position += new Vector3(0f, 0f, (compressionSpeed / maxCompression) * Time.deltaTime * plungerDistance);
@@ -52,8 +56,8 @@ public class CompressionSpring : MonoBehaviour {
 		}
 
 		if (this.ball != null && GameData.Instance.CurrentGameMode == GameData.GameMode.Start) {
-			if (Input.GetKeyUp("space")) {
-				this.ball.rigidbody.AddForce(Vector3.back * compression, ForceMode.Acceleration);
+			if (compressionOld > compression) {
+				this.ball.rigidbody.AddForce(Vector3.back * compressionOld, ForceMode.Acceleration);
 			}
 		}
 	}

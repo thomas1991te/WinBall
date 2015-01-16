@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.IO.Ports;
 using System;
+using System.IO;
 
 // This class manages all input from the controller and provides interfaces to access the data.
 public class Controller : MonoBehaviour {
@@ -47,8 +48,17 @@ public class Controller : MonoBehaviour {
 	// private constructor
 	public Controller() {
 		inputStream = new SerialPort(serialPort, 115200);
-		inputStream.Open();
-		Debug.Log("Serial port opened");
+		try {
+			inputStream.Open();
+			Debug.Log("Controller has been found");
+		} catch (IOException ex) {
+			Debug.Log("No Controller has been found");
+		}
+	}
+
+	// returns whether the controller has been connected or not
+	public bool isConnected() {
+		return inputStream.IsOpen;
 	}
 
 	// Returns the bit mask of the buttons

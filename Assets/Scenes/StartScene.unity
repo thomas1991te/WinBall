@@ -1054,7 +1054,7 @@ Transform:
   m_PrefabParentObject: {fileID: 401026, guid: 9bde9f359cb41ac47bfdf33d1a1176e8, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 44577947}
-  m_LocalRotation: {x: -.609263897, y: -.358883858, z: -.358883858, w: .609263837}
+  m_LocalRotation: {x: -.609263837, y: -.358883828, z: -.358883828, w: .609263778}
   m_LocalPosition: {x: -9, y: 29.0000286, z: 663.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -4700,7 +4700,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 209722574}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfeb41ef6d4ed47bfb3ea4c2c3a8dc04, type: 3}
+  m_Script: {fileID: 11500000, guid: 0389207f44ee64a32b3bb204c31c8244, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxCompression: 60000
@@ -11047,6 +11047,7 @@ MonoBehaviour:
   maxAngle: .400000006
   rotationSpeed: 700
   accelerationSpeed: 2000
+  maxAcceleration: 10000
 --- !u!54 &478955475
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12034,6 +12035,7 @@ GameObject:
   - 124: {fileID: 529368088}
   - 81: {fileID: 529368087}
   - 114: {fileID: 529368092}
+  - 114: {fileID: 529368093}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -12115,6 +12117,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 50d97c9467092440a9fde43541b163b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &529368093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 529368086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8331c7ec3434642edb22e94b460cf538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &530048535
@@ -13134,6 +13147,7 @@ MonoBehaviour:
   maxAngle: .5
   rotationSpeed: 700
   accelerationSpeed: 2000
+  maxAcceleration: 0
 --- !u!54 &564450790
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -28204,6 +28218,7 @@ MonoBehaviour:
   maxAngle: .400000006
   rotationSpeed: 700
   accelerationSpeed: 2000
+  maxAcceleration: 0
 --- !u!54 &1247715032
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -39956,6 +39971,7 @@ MonoBehaviour:
   maxAngle: .400000006
   rotationSpeed: 700
   accelerationSpeed: 2000
+  maxAcceleration: 10000
 --- !u!54 &1769264821
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -41348,7 +41364,7 @@ Transform:
   m_PrefabParentObject: {fileID: 401344, guid: 9bde9f359cb41ac47bfdf33d1a1176e8, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1817548065}
-  m_LocalRotation: {x: -.609263897, y: -.358883828, z: -.358883798, w: .609263897}
+  m_LocalRotation: {x: -.609263837, y: -.358883798, z: -.358883768, w: .609263837}
   m_LocalPosition: {x: -471.25, y: 2.0642703e-05, z: 472.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -41656,7 +41672,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3757af0f044df40c4a23e8e8b465566d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  downForce: 35
+  downForce: 40
   spawnPoint: {fileID: 332140002}
 --- !u!54 &1825334249
 Rigidbody:
@@ -41665,7 +41681,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1825334247}
   serializedVersion: 2
-  m_Mass: 500
+  m_Mass: 1.00000001e-07
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1

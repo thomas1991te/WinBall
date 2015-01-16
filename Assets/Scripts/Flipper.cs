@@ -32,8 +32,11 @@ public class Flipper : MonoBehaviour {
 	void Update () {
 		float angle = transform.localRotation.z - originalRotation.z;
 		float rotate = 0;
+
+		Controller controller = ActiveController.getActiveController();
+
 		if (this.gameObject.tag == "Flipper01_right") {
-			if (Input.GetButton("RightArrow")) {
+			if (Input.GetButton("RightArrow") || (controller.isConnected() && controller.getButton(Controller.button05))) {
 				if (angle < maxAngle) {
 					rotate = rotationSpeed * Time.deltaTime;
 				}
@@ -45,7 +48,7 @@ public class Flipper : MonoBehaviour {
 		}
 		if (this.gameObject.tag == "Flipper01_left") {
 			angle *= -1;
-			if (Input.GetButton("LeftArrow")) {
+			if (Input.GetButton("LeftArrow") || (controller.isConnected() && controller.getButton(Controller.button06))) {
 				if (angle < maxAngle) {
 					rotate = rotationSpeed * Time.deltaTime * -1f;
 				}
@@ -54,6 +57,10 @@ public class Flipper : MonoBehaviour {
 					rotate = rotationSpeed * Time.deltaTime;
 				}
 			}
+		}
+
+		if (angle < 0f) {
+			transform.localRotation = originalRotation;
 		}
 
 		if (rotate < 0) {
@@ -77,7 +84,11 @@ public class Flipper : MonoBehaviour {
 			// get current velocity of the ball
 			Vector3 velocityBall = theCollision.gameObject.rigidbody.velocity;
 			// update force according to ball velocity, hit angle and current speed of flipper
-			theCollision.gameObject.rigidbody.AddForce(velocityBall.x * angleOfContact * currentRotationSpeed, velocityBall.y, -accelerationSpeed * currentRotationSpeed, ForceMode.Acceleration);
+			Debug.Log("Rotation speed: " + currentRotationSpeed);
+			Debug.Log("Angle of Contact: " + angleOfContact);
+			Debug.Log("Velocity Ball: " + velocityBall);
+			float zAcc = -accelerationSpeed * currentRotationSpeed;
+			theCollision.gameObject.rigidbody.AddForce(velocityBall.x * currentRotationSpeed * angleOfContact, velocityBall.y, zAcc, ForceMode.Acceleration);
 		}
 	}
 }

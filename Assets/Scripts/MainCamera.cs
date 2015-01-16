@@ -14,7 +14,7 @@ public class MainCamera : MonoBehaviour {
 
 	void OnStart(){
 
-		}
+	}
 
 
 	void Update(){

@@ -69,8 +69,16 @@ public class Bumper : MonoBehaviour {
 		// light spotlight for spotlight duration seconds
 		public IEnumerator LightSpotlight() {
 			this.spotlight.intensity = intensity;
+			Controller controller = ActiveController.getActiveController();
+			if (controller.isConnected()) {
+				controller.setRumbleMotor(100);
+			}
 			yield return new WaitForSeconds(duration);
 			this.spotlight.intensity = 0f;
+			if (controller.isConnected()) {
+				controller.setRumbleMotor(0);
+			}
+
 		}
 
 	}
