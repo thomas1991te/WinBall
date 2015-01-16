@@ -12,8 +12,15 @@ public class MainCamera : MonoBehaviour {
 
 	}
 
+	void OnStart(){
+
+		}
+
+
 	void Update(){
+		transform.rotation = Quaternion.Euler (new Vector3(40,180,0));
 		score=GameData.Instance.Score;
 		lives=GameData.Instance.Lives;
+
 	}
 }

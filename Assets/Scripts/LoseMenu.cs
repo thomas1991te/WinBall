@@ -8,6 +8,7 @@ public class LoseMenu : MonoBehaviour {
 	private string instructionText = "You lost";
 	private int buttonWidth = 200;
 	private int buttonHeight = 50;
+
 	
 	void OnGUI()
 	{
@@ -17,7 +18,10 @@ public class LoseMenu : MonoBehaviour {
 		if(GUI.Button(new Rect(Screen.width / 2 - buttonWidth , Screen.height  - buttonHeight ,
 		                       buttonWidth, buttonHeight), "Play again"))
 		{
+			GameData.Instance.Score=0;
+			GameData.Instance.Lives=3;
 			Application.LoadLevel(1);
+
 		}
 		if(GUI.Button(new Rect(Screen.width / 2 +10 , Screen.height  - buttonHeight ,
 		                       buttonWidth, buttonHeight), "View Highscores"))
