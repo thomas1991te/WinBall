@@ -20,6 +20,7 @@ public class LoseMenu : MonoBehaviour {
 		{
 			GameData.Instance.Score=0;
 			GameData.Instance.Lives=3;
+			GameData.Instance.CurrentGameMode = GameData.GameMode.Start;
 			Application.LoadLevel(1);
 
 		}
