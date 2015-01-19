@@ -71,6 +71,7 @@ public class Tilt : MonoBehaviour {
 
 	// light spotlight for spotlight duration seconds
 	public IEnumerator Tilten() {
+		audio.Play ();
 		transform.position += tilt;
 		yield return new WaitForSeconds (speed);
 		transform.position -= tilt * 2;
