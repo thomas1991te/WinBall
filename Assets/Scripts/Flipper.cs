@@ -23,22 +23,36 @@ public class Flipper : MonoBehaviour {
 	// Current rotation speed of flipper
 	private float currentRotationSpeed;
 
+	private bool leftFlipper;
+	private bool rightFlipper;
+
 	// Use this for initialization
 	void Start () {
 		//controller = (Controller) this.gameObject.GetComponent(typeof(Controller));
 		originalRotation = transform.localRotation;
 		currentRotationSpeed = 0f;
+		rightFlipper = false;
+		leftFlipper = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		Controller controller = ActiveController.getActiveController();
+		if (Time.frameCount % 10 == 0) {
+			if (controller.isConnected()) {
+				if (this.gameObject.tag == "Flipper01_right") {
+					rightFlipper = controller.getButton(Controller.button05);
+				}
+				if (this.gameObject.tag == "Flipper01_left") {
+					leftFlipper = controller.getButton(Controller.button06);
+				}
+			}
+		}
 		float angle = transform.localRotation.z - originalRotation.z;
 		float rotate = 0;
 
-		Controller controller = ActiveController.getActiveController();
-
 		if (this.gameObject.tag == "Flipper01_right") {
-			if (Input.GetButton("RightArrow") || (controller.isConnected() && controller.getButton(Controller.button05))) {
+			if (Input.GetButton("RightArrow") || rightFlipper) {
 				if (angle < maxAngle) {
 					rotate = rotationSpeed * Time.deltaTime;
 				}
@@ -50,7 +64,7 @@ public class Flipper : MonoBehaviour {
 		}
 		if (this.gameObject.tag == "Flipper01_left") {
 			angle *= -1;
-			if (Input.GetButton("LeftArrow") || (controller.isConnected() && controller.getButton(Controller.button06))) {
+			if (Input.GetButton("LeftArrow") || leftFlipper) {
 				if (angle < maxAngle) {
 					rotate = rotationSpeed * Time.deltaTime * -1f;
 				}
@@ -89,7 +103,7 @@ public class Flipper : MonoBehaviour {
 			Vector3 velocityBall = theCollision.gameObject.rigidbody.velocity;
 			// update force according to ball velocity, hit angle and current speed of flipper
 			float acc = -accelerationSpeed * currentRotationSpeed;
-			theCollision.gameObject.rigidbody.AddForce(acc * rotSpeed * angleOfContact, 0, acc * rotSpeed, ForceMode.VelocityChange);
+			theCollision.gameObject.rigidbody.AddForce(acc * angleOfContact, 0, acc * rotSpeed, ForceMode.VelocityChange);
 		}
 	}
 }

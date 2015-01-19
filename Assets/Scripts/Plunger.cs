@@ -33,31 +33,33 @@ public class Plunger : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Controller controller = ActiveController.getActiveController();
+		if (GameData.Instance.CurrentGameMode == GameData.GameMode.Start) {
+			Controller controller = ActiveController.getActiveController();
 
-		float compressionOld = compression;
+			float compressionOld = compression;
 
-		if (Input.GetKey("space") || (controller.isConnected() && controller.getButton(Controller.button01))) {
-			if (compression < maxCompression) {
-				compression += compressionSpeed * Time.deltaTime;
-				transform.position += new Vector3(0f, 0f, (compressionSpeed / maxCompression) * Time.deltaTime * plungerDistance);
+			if (Input.GetKey("space") || (controller.isConnected() && controller.getButton(Controller.button01))) {
+				if (compression < maxCompression) {
+					compression += compressionSpeed * Time.deltaTime;
+					transform.position += new Vector3(0f, 0f, (compressionSpeed / maxCompression) * Time.deltaTime * plungerDistance);
+				}
+			} else {
+				if (compression > 0f) {
+					compression -= releaseSpeed * Time.deltaTime;
+					transform.position -= new Vector3(0f, 0f, (releaseSpeed / maxCompression) * Time.deltaTime * plungerDistance);
+				}
+
 			}
-		} else {
-			if (compression > 0f) {
-				compression -= releaseSpeed * Time.deltaTime;
-				transform.position -= new Vector3(0f, 0f, (releaseSpeed / maxCompression) * Time.deltaTime * plungerDistance);
+
+			if (compression < 0f) {
+				compression = 0f;
+				transform.position = originalPos;
 			}
 
-		}
-
-		if (compression < 0f) {
-			compression = 0f;
-			transform.position = originalPos;
-		}
-
-		if (this.ball != null && GameData.Instance.CurrentGameMode == GameData.GameMode.Start) {
-			if (compressionOld > compression) {
-				this.ball.rigidbody.AddForce(Vector3.back * compressionOld, ForceMode.VelocityChange);
+			if (this.ball != null && GameData.Instance.CurrentGameMode == GameData.GameMode.Start) {
+				if (compressionOld > compression) {
+					this.ball.rigidbody.AddForce(Vector3.back * compressionOld, ForceMode.VelocityChange);
+				}
 			}
 		}
 	}

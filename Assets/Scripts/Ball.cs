@@ -21,10 +21,11 @@ public class Ball : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		score=GameData.Instance.Score;
+		rigidbody.AddForce(new Vector3(0, -1, 1) * downForce, ForceMode.VelocityChange);
 	}
 
 	void FixedUpdate() {
-		rigidbody.AddForce(new Vector3(0, -1, 1) * downForce, ForceMode.VelocityChange);
+
 	}
 
 	void OnTriggerEnter(Collider other) {
