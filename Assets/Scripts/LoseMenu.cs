@@ -27,6 +27,7 @@ public class LoseMenu : MonoBehaviour {
 		if(GUI.Button(new Rect(Screen.width / 2 +10 , Screen.height  - buttonHeight ,
 		                       buttonWidth, buttonHeight), "View Highscores"))
 		{
+			GameData.Instance.CurrentGameMode = GameData.GameMode.Start;
 			Application.LoadLevel(4);
 		}
 		

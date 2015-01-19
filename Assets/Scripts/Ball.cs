@@ -9,14 +9,18 @@ public class Ball : MonoBehaviour {
 	// the spawn point of the ball
 	public GameObject spawnPoint;
 
+	private int highscore;
+	private int score;
+	
 	// Use this for initialization
 	void Start () {
-	
+		GameData.Instance.Score=0;
+		GameData.Instance.Lives=3;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+		score=GameData.Instance.Score;
 	}
 
 	void FixedUpdate() {
@@ -33,6 +37,17 @@ public class Ball : MonoBehaviour {
 				// game over
 				GameData.Instance.CurrentGameMode = GameData.GameMode.GameOver;
 				GameObject.Destroy(this.gameObject);
+
+
+				for(int i=0;i<5;i++){
+					highscore=PlayerPrefs.GetInt(i+"highscore");
+					if(score>highscore){
+						int temp=highscore;
+						PlayerPrefs.SetInt(i+"highscore",score);
+						score=temp;
+						
+					}
+				}
 				Application.LoadLevel(3);
 			}
 		} else if (other.tag == "BallOutTrigger") {
