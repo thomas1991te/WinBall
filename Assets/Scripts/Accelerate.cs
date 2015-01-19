@@ -19,7 +19,7 @@ public class Accelerate : MonoBehaviour {
 	void OnCollisionEnter(Collision theCollision) {
 		if(theCollision.gameObject.tag == "Ball") {
 			Vector3 velocityBall = Vector3.Normalize(theCollision.rigidbody.velocity);
-			theCollision.gameObject.rigidbody.AddForce(velocityBall.x, velocityBall.y, velocityBall.z * accelerationFactor, ForceMode.Acceleration);
+			theCollision.gameObject.rigidbody.AddForce(velocityBall.x, 0, velocityBall.z * accelerationFactor, ForceMode.VelocityChange);
 		}
 	}
 }

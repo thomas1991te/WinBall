@@ -14,6 +14,8 @@ public class Bumper : MonoBehaviour {
 
 	public int points;
 
+	public int angleFactor;
+
 	// Use this for initialization
 	void Start () {
 		foreach (Spotlight spotlight in spotlights) {
@@ -35,7 +37,8 @@ public class Bumper : MonoBehaviour {
 			// calculate random bouncing speed
 			float bouncingSpeed = Random.Range(bouncingSpeedMin, bouncingSpeedMax);
 			// update force according to ball velocity, hit angle and current speed of flipper
-			theCollision.gameObject.rigidbody.AddForce(velocityBall.x * bouncingSpeed, velocityBall.y, -bouncingSpeed * velocityBall.z, ForceMode.Acceleration);
+			theCollision.gameObject.rigidbody.AddForce(bouncingSpeed * angleOfContact * angleFactor, 0, -bouncingSpeed, ForceMode.Impulse);
+
 
 			foreach (Spotlight spotlight in spotlights) {
 				StartCoroutine(spotlight.LightSpotlight());

@@ -81,14 +81,18 @@ public class Flipper : MonoBehaviour {
 		if (theCollision.gameObject.tag == "Ball") {
 			// calculate the angel of contact between the two colliding objects
 			float angleOfContact = UtilityClass.calculateAngleOfContact(theCollision.gameObject, this.gameObject);
+			if (this.gameObject.tag == "Flipper01_right") {
+				angleOfContact *= -1;
+			}
+			float rotSpeed = currentRotationSpeed / rotationSpeed;
 			// get current velocity of the ball
 			Vector3 velocityBall = theCollision.gameObject.rigidbody.velocity;
 			// update force according to ball velocity, hit angle and current speed of flipper
-			Debug.Log("Rotation speed: " + currentRotationSpeed);
+			Debug.Log("Rotation speed: " + rotSpeed);
 			Debug.Log("Angle of Contact: " + angleOfContact);
 			Debug.Log("Velocity Ball: " + velocityBall);
-			float zAcc = -accelerationSpeed * currentRotationSpeed;
-			theCollision.gameObject.rigidbody.AddForce(velocityBall.x * currentRotationSpeed * angleOfContact, velocityBall.y, zAcc, ForceMode.Acceleration);
+			float acc = -accelerationSpeed * currentRotationSpeed;
+			theCollision.gameObject.rigidbody.AddForce(acc * rotSpeed * angleOfContact, 0, acc * rotSpeed, ForceMode.VelocityChange);
 		}
 	}
 }

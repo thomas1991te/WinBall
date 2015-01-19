@@ -20,7 +20,7 @@ public class Ball : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
-		rigidbody.AddForce(new Vector3(0, -1, 1) * downForce, ForceMode.Acceleration);
+		rigidbody.AddForce(new Vector3(0, -1, 1) * downForce, ForceMode.VelocityChange);
 	}
 
 	void OnTriggerEnter(Collider other) {

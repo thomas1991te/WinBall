@@ -57,7 +57,7 @@ public class Plunger : MonoBehaviour {
 
 		if (this.ball != null && GameData.Instance.CurrentGameMode == GameData.GameMode.Start) {
 			if (compressionOld > compression) {
-				this.ball.rigidbody.AddForce(Vector3.back * compressionOld, ForceMode.Acceleration);
+				this.ball.rigidbody.AddForce(Vector3.back * compressionOld, ForceMode.VelocityChange);
 			}
 		}
 	}
