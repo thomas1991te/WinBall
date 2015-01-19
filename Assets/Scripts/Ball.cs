@@ -40,7 +40,7 @@ public class Ball : MonoBehaviour {
 				GameData.Instance.CurrentGameMode = GameData.GameMode.Playing;
 			} else {
 				// kick ball out if it falls back to the plunger
-				this.rigidbody.AddForce(this.rigidbody.velocity.x, this.rigidbody.velocity.y, -200f * downForce, ForceMode.Acceleration);
+				this.rigidbody.AddForce(this.rigidbody.velocity.x, this.rigidbody.velocity.y, -200f * downForce, ForceMode.VelocityChange);
 			}
 		}
 	}
