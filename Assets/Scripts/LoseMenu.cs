@@ -5,7 +5,7 @@ public class LoseMenu : MonoBehaviour {
 	
 	public Texture loseBackground;
 	
-	private string instructionText = "You lost";
+	private string instructionText = "Game Over";
 	private int buttonWidth = 200;
 	private int buttonHeight = 50;
 
@@ -15,6 +15,7 @@ public class LoseMenu : MonoBehaviour {
 
 		GUI.DrawTexture (new Rect (0, 0, Screen.width, Screen.height), loseBackground);
 		GUI.Label (new Rect (Screen.width / 2 - buttonWidth / 2, 10, 250, 200), instructionText);
+		GUI.Label (new Rect (Screen.width / 2 - buttonWidth / 2, 30, 250, 200), "Your Score: " + GameData.Instance.Score);
 		if(GUI.Button(new Rect(Screen.width / 2 - buttonWidth , Screen.height  - buttonHeight ,
 		                       buttonWidth, buttonHeight), "Play again"))
 		{

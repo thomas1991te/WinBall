@@ -38,16 +38,10 @@ public class Flipper : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		Controller controller = ActiveController.getActiveController();
-		if (Time.frameCount % 10 == 0) {
-			if (controller.isConnected()) {
-				if (this.gameObject.tag == "Flipper01_right") {
-					rightFlipper = controller.getButton(Controller.button05);
-				}
-				if (this.gameObject.tag == "Flipper01_left") {
-					leftFlipper = controller.getButton(Controller.button06);
-				}
-			}
-		}
+		rightFlipper = controller.getButton(Controller.button05);
+		leftFlipper = controller.getButton(Controller.button06);
+
+
 		float angle = transform.localRotation.z - originalRotation.z;
 		float rotate = 0;
 

@@ -24,7 +24,7 @@ public class Tilt : MonoBehaviour {
 	void Update () {
 		Controller controller = ActiveController.getActiveController();
 		lastTilt += Time.deltaTime;
-		if (lastTilt > delay && (Input.GetKey("t") || (controller.isConnected() && controller.getButton(Controller.button02)))) {
+		if (lastTilt > delay && (Input.GetKey("t") || controller.getButton(Controller.button02))) {
 			lastTilt = 0.0f;
 			StartCoroutine(Tilten());
 			if (controller.isConnected()) {

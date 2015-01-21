@@ -2,6 +2,7 @@ using UnityEngine;
 using System.IO.Ports;
 using System;
 using System.IO;
+using System.Collections;
 
 // This class manages all input from the controller and provides interfaces to access the data.
 public class Controller : MonoBehaviour {
@@ -45,8 +46,12 @@ public class Controller : MonoBehaviour {
 	 **/
 	private string accelerometerRawData;
 
-	// private constructor
-	public Controller() {
+	/**
+	 * Received value for buttons.
+	 **/
+	public string buttons;
+
+	void Start() {
 		inputStream = new SerialPort(serialPort, 115200);
 		try {
 			inputStream.Open();
@@ -54,6 +59,12 @@ public class Controller : MonoBehaviour {
 		} catch (IOException ex) {
 			Debug.Log("No Controller has been found");
 		}
+
+		buttons = "0";
+	}
+
+	void Update() {
+		updateButtons();
 	}
 
 	// returns whether the controller has been connected or not
@@ -61,10 +72,22 @@ public class Controller : MonoBehaviour {
 		return inputStream.IsOpen;
 	}
 
+	/**
+	 * Updates the string for buttons.
+	 **/
+	public void updateButtons() {
+		if (isConnected()) {
+			inputStream.Write("1");
+			buttons = inputStream.ReadLine();
+		}
+	}
+
 	// Returns the bit mask of the buttons
 	private Int32 getButtons() {
-		inputStream.Write("1");
-		return System.Convert.ToInt32(inputStream.ReadLine().Trim(), 16);
+		//inputStream.Write("1");
+		//return System.Convert.ToInt32(inputStream.ReadLine().Trim(), 16);
+		Int32 value = System.Convert.ToInt32(buttons.Trim(), 16);
+		return value;
 	}
 
 	// Returns wheather the given button with the given bit mask is pressed or not

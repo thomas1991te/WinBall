@@ -35,10 +35,10 @@ public class HighScoreMenu : MonoBehaviour {
 			}
 			Application.LoadLevel(4);
 		}
-		GUI.Label (new Rect (Screen.width / 2 - buttonWidth / 2, 50, 250, 200), "0: "+highScoreOne);
-		GUI.Label (new Rect (Screen.width / 2 - buttonWidth / 2, 100, 250, 200), "1: "+highScoreTwo);
-		GUI.Label (new Rect (Screen.width / 2 - buttonWidth / 2, 150, 250, 200), "2: "+highScoreThree);
-		GUI.Label (new Rect (Screen.width / 2 - buttonWidth / 2, 200, 250, 200),"3: "+ highScoreFour);
-		GUI.Label (new Rect (Screen.width / 2 - buttonWidth / 2, 250, 250, 200), "4: "+highScoreFive);
+		GUI.Label (new Rect (Screen.width / 2 - buttonWidth / 2, 50, 250, 200), "1. "+highScoreOne);
+		GUI.Label (new Rect (Screen.width / 2 - buttonWidth / 2, 100, 250, 200), "2. "+highScoreTwo);
+		GUI.Label (new Rect (Screen.width / 2 - buttonWidth / 2, 150, 250, 200), "3. "+highScoreThree);
+		GUI.Label (new Rect (Screen.width / 2 - buttonWidth / 2, 200, 250, 200),"4. "+ highScoreFour);
+		GUI.Label (new Rect (Screen.width / 2 - buttonWidth / 2, 250, 250, 200), "5. "+highScoreFive);
 	}
 }
